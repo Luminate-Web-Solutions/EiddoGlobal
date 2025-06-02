@@ -1,1 +1,14 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <div class="logo">
+    <img src="logo.png" alt="Logo" />
+  </div>
+  <ul class="nav-links">
+    <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/about-us" routerLinkActive="active">About us</a></li>
+    <li><a routerLink="/services" routerLinkActive="active">Services</a></li>
+  </ul>
+  <div class="nav-right">
+    <mat-icon class="search-icon">search</mat-icon>
+    <a routerLink="/contact" class="contact-link">Contact us</a>
+  </div>
+</nav>

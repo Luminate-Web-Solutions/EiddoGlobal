@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RentalsComponent } from './rentals/rentals.component';
 import { FeaturedPropertiesComponent } from './featured-properties/featured-properties.component';
+import { MatIconModule } from '@angular/material/icon'; // Importing Angular Material Icon Module
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FeaturedPropertiesComponent } from './featured-properties/featured-prop
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

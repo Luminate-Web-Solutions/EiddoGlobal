@@ -1,0 +1,316 @@
+/* Hero Section */
+.hero-container {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  width: 100%;
+  background-image: url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  color: white;
+}
+
+.hero-title {
+  background-color: rgba(108, 117, 125, 0.8);
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+}
+
+/* Vision & Mission Section */
+.vision-mission-container {
+  display: flex;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  background-color: white;
+}
+
+.vision-container, .mission-container {
+  flex: 1;
+  padding: 1rem;
+}
+
+.divider {
+  width: 1px;
+  background-color: #D4AF37;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #222;
+}
+
+.section-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Values Section */
+.values-container {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  margin: 2rem 0;
+}
+
+.values-heading {
+  font-size: 1.75rem;
+  line-height: 1.4;
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: #333;
+}
+
+/* Welcome Section */
+.welcome-container {
+  padding: 2rem;
+  background-color: #B22222;
+  color: white;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-title {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.welcome-content {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.welcome-content p {
+  margin-bottom: 1rem;
+}
+
+.signature {
+  font-style: italic;
+  text-align: right;
+  margin-top: 1.5rem;
+}
+
+/* Team Section */
+.team-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: white;
+}
+
+.team-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.team-subtitle {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.team-diagram {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto 3rem;
+}
+
+.diagram-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.company-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  background: white;
+  padding: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.gold {
+  color: #D4AF37;
+}
+
+.diagram-item {
+  position: absolute;
+  width: 120px;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #B22222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #B22222;
+  transition: all 0.3s ease;
+}
+
+.circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.item-1 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.item-2 {
+  top: 30%;
+  right: 0;
+}
+
+.item-3 {
+  bottom: 30%;
+  right: 0;
+}
+
+.item-4 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.item-5 {
+  top: 30%;
+  left: 0;
+}
+
+.contact-text {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.contact-button {
+  display: inline-block;
+  background-color: #D4AF37;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+}
+
+.contact-button:hover {
+  background-color: #C09B24;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.6);
+}
+
+.contact-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-container {
+    height: 40vh;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .vision-mission-container {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .values-container {
+    padding: 2rem 1rem;
+  }
+
+  .values-heading {
+    font-size: 1.3rem;
+  }
+
+  .welcome-container {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+
+  .welcome-title {
+    font-size: 1.5rem;
+  }
+
+  .team-section {
+    padding: 2rem 1rem;
+  }
+
+  .team-diagram {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .diagram-item {
+    position: static;
+    width: auto;
+    transform: none !important;
+  }
+
+  .company-logo {
+    margin-bottom: 1.5rem;
+  }
+}
