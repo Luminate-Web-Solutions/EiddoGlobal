@@ -1,0 +1,250 @@
+/* Base Styles */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.animation {
+  flex: 1;
+  max-width: 530px;
+  height: 535px;
+  margin-top: 230px;
+}
+
+.contact-container {
+  flex: 1;
+  max-width: 800px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced box shadow */
+  border: 2px solid #153361; /* Highlight border */
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-header h2 {
+  color: #153361; /* Primary color */
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.contact-header p {
+  color: #666;
+  font-size: 1.1em;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact-info h3 {
+  color: #153361; /* Primary color */
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.info-item mat-icon {
+  color: #153361; /* Primary color */
+  margin-right: 10px;
+}
+
+.business-hours {
+  margin-top: 30px;
+}
+
+.business-hours h4 {
+  color: #153361; /* Primary color */
+  margin-bottom: 10px;
+}
+
+.business-hours p {
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #153361; /* Primary color */
+}
+
+.message-input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background-color: #153361; /* Primary color */
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow */
+}
+
+/* Add to contact.component.css */
+.form-group .g-recaptcha {
+  margin: 15px 0;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.875em;
+  margin-top: 5px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0d274d; /* Darker primary color */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .animation, .contact-container {
+    max-width: 100%;
+  }
+
+  .animation {
+    margin-top: 0;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contact-info, .contact-form {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .contact-info {
+    margin-bottom: 20px;
+  }
+
+  .contact-header h2 {
+    font-size: 2rem;
+  }
+
+  .contact-header p {
+    font-size: 1rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-item mat-icon {
+    margin-bottom: 10px;
+  }
+
+  .form-input {
+    font-size: 14px;
+  }
+
+  button[type="submit"] {
+    padding: 12px 24px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-header p {
+    font-size: 0.9rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .info-item {
+    font-size: 0.9rem;
+  }
+
+  .form-input {
+    font-size: 12px;
+  }
+
+  button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

@@ -13,6 +13,15 @@ import { RentalsComponent } from './rentals/rentals.component';
 import { FeaturedPropertiesComponent } from './featured-properties/featured-properties.component';
 import { MatIconModule } from '@angular/material/icon'; // Importing Angular Material Icon Module
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +38,14 @@ import { MatIconModule } from '@angular/material/icon'; // Importing Angular Mat
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatProgressSpinnerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

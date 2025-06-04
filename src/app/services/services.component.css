@@ -1,0 +1,159 @@
+ body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #1a1a1a;
+    }
+
+    header {
+      background: url('/services-hero.png') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #d4a017;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #d4a017;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .service-content {
+      padding: 20px;
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .service-icon {
+      background-color: #d4a017;
+      color: white;
+      padding: 10px;
+      display: inline-block;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .expert-help-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  background-color: #fff;
+  gap: 40px;
+}
+
+.content-left, 
+.content-right {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.content-left h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: #111;
+}
+
+.features {
+  display: flex;
+  gap: 40px;
+  font-size: 1.1rem;
+  color: #333;
+  margin-left: 85px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-yellow {
+  color: #d4a017;
+  font-size: 32px;
+}
+
+.content-right {
+  text-align: center;
+}
+
+.content-right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .expert-help-section {
+    flex-direction: column;
+    padding: 40px 5%;
+  }
+  .content-left, .content-right {
+    min-width: auto;
+  }
+  .features {
+    justify-content: center;
+  }
+}

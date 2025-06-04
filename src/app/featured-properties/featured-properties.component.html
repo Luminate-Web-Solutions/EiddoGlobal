@@ -1,1 +1,81 @@
-<p>featured-properties works!</p>
+<app-navbar></app-navbar>
+<div class="featured-properties-container">
+  <h2 class="featured-title">Featured Properties</h2>
+  
+  <div class="filter-section">
+    <button class="filter-toggle" (click)="toggleFilter()">
+      Filter
+      <span class="filter-icon" [class.open]="showFilter">&#9662;</span>
+    </button>
+    
+    <div class="filter-dropdown" *ngIf="showFilter">
+      <!-- Filter options would go here -->
+      <div class="filter-option">
+        <label>
+          <input type="checkbox"> Residential
+        </label>
+      </div>
+      <div class="filter-option">
+        <label>
+          <input type="checkbox"> Commercial
+        </label>
+      </div>
+      <div class="filter-option">
+        <label>
+          <input type="checkbox"> For Rent
+        </label>
+      </div>
+      <div class="filter-option">
+        <label>
+          <input type="checkbox"> For Sale
+        </label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="properties-grid">
+    <div class="property-card" *ngFor="let property of properties">
+      <div class="property-image-container">
+        <img [src]="property.image" alt="Property image" class="property-image">
+        <span class="property-type">{{ property.type }}</span>
+      </div>
+      
+      <div class="property-details">
+        <h3 class="property-title">{{ property.title }}</h3>
+        <p class="property-price">{{ property.price }}</p>
+        <p class="property-description">{{ property.description }}</p>
+        
+        <div class="property-features">
+          <div class="feature location">
+            <span class="feature-icon location-icon"></span>
+            <span class="feature-text">{{ property.location }}</span>
+          </div>
+          
+          <div class="feature bedrooms">
+            <span class="feature-icon bed-icon"></span>
+            <span class="feature-text">{{ property.bedrooms }}</span>
+          </div>
+          
+          <div class="feature area">
+            <span class="feature-icon area-icon"></span>
+            <span class="feature-text">{{ property.area }}</span>
+          </div>
+        </div>
+        
+        <div class="property-footer">
+          <div class="location-badge">
+            <span class="location-pin"></span>
+            <span class="location-text">{{ property.location }}</span>
+          </div>
+          
+          <a href="#" class="learn-more-btn">
+            Learn More
+            <span class="arrow-icon">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

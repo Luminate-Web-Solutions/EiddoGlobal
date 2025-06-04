@@ -1,1 +1,109 @@
-<p>contact works!</p>
+<app-navbar></app-navbar>
+<div class="main-container">
+  <div class="animation">
+    <iframe src="https://lottie.host/embed/67e651f3-0699-413d-9095-6007d1f9c13f/PK07QSkN6m.lottie" width="100%" height="100%" style="border: none;"></iframe>
+  </div>
+  <div class="contact-container">
+    <div class="contact-header">
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you! Please fill out the form below and we'll get in touch with you shortly.</p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="map-container">
+
+           
+        <div class="info-item">
+          <mat-icon class="location">location_on</mat-icon>
+          <a href="https://www.google.com/maps/search/?api=1&query=10-3-310/1, CastleHills Technopolis, Masab Tank, Hyderabad, Telangana 500028, India" target="_blank" class="footer-contact">
+            10-3-310/1, CastleHills Technopolis, Masab Tank, Hyderabad, Telangana 500028, India
+          </a>
+        </div>
+
+          <div class="map-container">
+            <iframe 
+              src="https://www.openstreetmap.org/export/embed.html?bbox=78.442361%2C17.400456%2C78.452361%2C17.410456&layer=mapnik&marker=17.405456%2C78.447361" 
+              width="100%" 
+              height="300" 
+              style="border:0;">
+            </iframe>
+          </div>
+          
+
+
+          <!-- <iframe 
+            src="https://www.google.com/maps/embed/v1/place?q=10-3-310/1,+CastleHills+Technopolis,+Masab+Tank,+Hyderabad,+Telangana+500028,+India&key=YOUR_GOOGLE_MAPS_API_KEY" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div> -->
+       
+        <!-- <div class="info-item">
+          <mat-icon>call</mat-icon>
+          <p><a href="tel:+919885001701">+91 988-500-1701</a></p>
+        </div> -->
+          <!-- <div class="info-item">
+            <mat-icon>mail</mat-icon>
+            <p><a href="mailto:info@eiddopower.com">info&#64;eiddopower.com</a></p>
+          </div> -->
+        <!-- <div class="business-hours">
+          <h4>Business Hours</h4>
+          <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div> -->
+      </div>
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()"  class="contact-form">
+        <div class="form-group">
+          <input type="text" formControlName="name" placeholder="Name" class="form-input">
+          <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" class="error-message">
+            <span *ngIf="contactForm.get('name')?.errors?.['required']">Name is required</span>
+            <span *ngIf="contactForm.get('name')?.errors?.['minlength']">Name must be at least 2 characters</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="email" formControlName="email" placeholder="Email" class="form-input">
+          <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid" class="error-message">
+            <span *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</span>
+            <span *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" formControlName="phone" placeholder="Phone" class="form-input">
+          <div *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid" class="error-message">
+            <span *ngIf="contactForm.get('phone')?.errors?.['required']">Phone number is required</span>
+            <span *ngIf="contactForm.get('phone')?.errors?.['pattern']">Please enter a valid 10-digit phone number</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" formControlName="subject" placeholder="Subject" class="form-input">
+          <div *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid" class="error-message">
+            <span *ngIf="contactForm.get('subject')?.errors?.['required']">Subject is required</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <textarea formControlName="message" placeholder="Message" class="form-input message-input" rows="5"></textarea>
+          <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" class="error-message">
+            <span *ngIf="contactForm.get('message')?.errors?.['required']">Message is required</span>
+            <span *ngIf="contactForm.get('message')?.errors?.['minlength']">Message must be at least 10 characters</span>
+          </div>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid || loading">
+          <span *ngIf="!loading">Send Message</span>
+          <mat-spinner *ngIf="loading" diameter="20"></mat-spinner>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<app-footer></app-footer>

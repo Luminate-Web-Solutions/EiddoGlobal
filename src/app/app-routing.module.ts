@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ServicesComponent } from './services/services.component';
 import { RentalsComponent } from './rentals/rentals.component';
+import { FeaturedPropertiesComponent } from './featured-properties/featured-properties.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'rentals', component: RentalsComponent },
+  { path: 'featured-properties', component: FeaturedPropertiesComponent },
 ];
 
 @NgModule({
