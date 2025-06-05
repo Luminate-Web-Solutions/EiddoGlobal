@@ -50,42 +50,27 @@ export class ContactComponent implements OnInit {
 
 
   onSubmit(): void {
-    if (this.contactForm.invalid || !this.captchaResponse) {
-      if (!this.captchaResponse) {
-        this.showCaptchaError = true;
-      }
-      return;
+  if (this.contactForm.invalid) return;
+
+  this.loading = true;
+
+  this.contactService.sendMessage(this.contactForm.value).subscribe({
+    next: (res) => {
+      this.snackBar.open('Message sent successfully!', 'Close', {
+        duration: 3000,
+        panelClass: ['snackbar-success']
+      });
+      this.contactForm.reset();
+      this.loading = false;
+    },
+    error: (err) => {
+      this.snackBar.open('Failed to send message. Please try again.', 'Close', {
+        duration: 3000,
+        panelClass: ['snackbar-error']
+      });
+      this.loading = false;
     }
+  });
+}
 
-    this.loading = true;
-    const formData = {
-      ...this.contactForm.value,
-      recaptchaToken: this.captchaResponse
-    };
-
-    this.contactService.submitContactForm(formData).subscribe({
-      next: (response) => {
-        console.log('Success:', response);
-        this.snackBar.open('Message sent successfully!', 'Close', {
-          duration: 3000,
-          horizontalPosition: 'right',
-          verticalPosition: 'top'
-        });
-        this.contactForm.reset();
-        this.loading = false;
-        grecaptcha.reset(); // Reset reCAPTCHA
-      },
-      error: (error) => {
-        console.error('Error:', error);
-        const errorMessage = error.error.message || 'Failed to send message. Please try again.';
-        this.snackBar.open(errorMessage, 'Close', {
-          duration: 3000,
-          horizontalPosition: 'right',
-          verticalPosition: 'top'
-        });
-        this.loading = false;
-        grecaptcha.reset(); // Reset reCAPTCHA
-      }
-    });
-  }
 }
