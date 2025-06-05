@@ -2,12 +2,28 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 const app = express();
 const PORT = 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
+
+
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: parseInt(process.env.SMTP_PORT), // 587
+  secure: false, // STARTTLS requires false
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS
+  },
+  tls: {
+    rejectUnauthorized: false // allow self-signed certs for now
+  }
+});
+
 
 app.post('/api/contact', async (req, res) => {
   const { name, email, phone, subject, message } = req.body;
@@ -16,20 +32,23 @@ app.post('/api/contact', async (req, res) => {
     return res.status(400).json({ success: false, error: 'Required fields missing' });
   }
 
-  // Gmail SMTP transporter
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: process.env.SMTP_HOST,
+    port: parseInt(process.env.SMTP_PORT),
+    secure: false, // false for port 587
     auth: {
-      user: 'fahadullah948@gmail.com',         // your Gmail address
-      pass: 'no'        // Gmail App Password
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS
+    },
+    tls: {
+      rejectUnauthorized: false
     }
   });
 
-  // Email to YOUR business inbox
   const mailOptions = {
-    from: 'your-gmail@gmail.com',           // Gmail sender (required by Gmail)
-    to: 'info@eiddoglobal.com',             // your business email (receiver)
-    replyTo: email,                         // user’s email for reply
+    from: process.env.SMTP_USER,
+    to: 'info@eiddoglobal.com',
+    replyTo: email,
     subject: `Contact Form: ${subject || 'No Subject'}`,
     html: `
       <h3>New Contact Form Submission</h3>
@@ -45,8 +64,28 @@ app.post('/api/contact', async (req, res) => {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ success: true, message: 'Message sent successfully' });
   } catch (error) {
-    console.error('Mail error:', error);
-    res.status(500).json({ success: false, error: 'Failed to send message' });
+    console.error('Mail error:', error); // <-- more detailed logging here
+    res.status(500).json({
+      success: false,
+      error: 'Failed to send message',
+      detail: error.message // this goes back to frontend for visibility
+    });
+  }
+});
+
+
+app.get('/test-email', async (req, res) => {
+  try {
+    await transporter.sendMail({
+      from: process.env.SMTP_USER || 'info@eiddoglobal.com',
+      to: 'yourpersonalemail@example.com',  // change to your personal email to test
+      subject: 'Test Email from Eiddo Global Server',
+      text: 'This is a test email sent using Nodemailer with aaPanel SMTP.'
+    });
+    res.send('Test email sent successfully!');
+  } catch (error) {
+    console.error('Test email error:', error);
+    res.status(500).send('Failed to send test email.');
   }
 });
 
