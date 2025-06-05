@@ -1,101 +1,101 @@
- body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      color: #1a1a1a;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #1a1a1a;
+}
 
-    header {
-      background: url('/services-hero.png') no-repeat center center;
-      background-size: cover;
-      color: #fff;
-      padding: 100px 20px;
-      text-align: center;
-    }
+header {
+  background: url('/services-hero.png') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
 
-    header p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-    }
+header p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
 
-    .btn {
-      padding: 10px 20px;
-      background-color: #d4a017;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
+.btn {
+  padding: 10px 20px;
+  background-color: #d4a017;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
 
-    section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    section h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #d4a017;
-    }
+section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #d4a017;
+}
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 30px;
-    }
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 30px;
+}
 
-    .service-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
 
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
+.service-card:hover {
+  transform: translateY(-5px);
+}
 
-    .service-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
 
-    .service-content {
-      padding: 20px;
-    }
+.service-content {
+  padding: 20px;
+}
 
-    .service-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 
-    .service-icon {
-      background-color: #d4a017;
-      color: white;
-      padding: 10px;
-      display: inline-block;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
+.service-icon {
+  background-color: #d4a017;
+  color: white;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
 
-    .expert-help-section {
+.expert-help-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 60px 10%;
+  padding: 40px 5%;
   background-color: #fff;
   gap: 40px;
 }
@@ -116,10 +116,11 @@
 
 .features {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  gap: 20px;
   font-size: 1.1rem;
   color: #333;
-  margin-left: 85px;
+  margin-left: 0;
 }
 
 .feature-item {
@@ -145,6 +146,12 @@
 }
 
 /* Responsive tweaks */
+@media (min-width: 600px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .expert-help-section {
     flex-direction: column;
@@ -155,5 +162,20 @@
   }
   .features {
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 80px 20px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  section h2 {
+    font-size: 2rem;
   }
 }

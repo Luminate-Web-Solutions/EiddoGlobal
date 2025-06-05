@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:3000/api'  // Local Node.js server
+  apiBaseUrl: 'https://eiddoglobal.com/api'  // Local Node.js server
 };

@@ -1,7 +1,7 @@
 /* Hero Section */
 .hero-container {
   position: relative;
-  height: 60vh;
+  height: 50vh;
   min-height: 400px;
   width: 100%;
   background-image: url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg');
@@ -143,7 +143,7 @@
   position: relative;
   width: 100%;
   max-width: 600px;
-  height: auto;
+  height: 400px; /* Fixed height for diagram container */
   margin: 0 auto 3rem;
 }
 
@@ -259,7 +259,7 @@
   .hero-container {
     height: 40vh;
   }
-  
+
   .hero-title {
     font-size: 2rem;
     padding: 0.75rem 1.5rem;
@@ -308,9 +308,21 @@
     position: static;
     width: auto;
     transform: none !important;
+    margin-bottom: 1rem;
   }
 
   .company-logo {
     margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
   }
 }

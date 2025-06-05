@@ -27,6 +27,103 @@
   font-weight: bold;
 }
 
+/* Navbar styles (copied from your prompt) */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(40, 40, 40, 0.9); /* Transparent with tint */
+  padding: 15px 5%; /* Use percentage for horizontal padding */
+  height: auto; /* Remove fixed height */
+  min-height: 80px; /* Set minimum height */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.logo img {
+  height: 55px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2vw; /* Use viewport units for gap */
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #f2a200; /* Gold tint */
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-icon {
+  font-size: 26px;
+  color: black;
+}
+
+.contact-link {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #f2a200;
+}
+
+/* Mobile menu toggle button (hamburger) */
+.mobile-menu-toggle {
+  display: none; /* Hidden by default */
+}
+
+@media (max-width: 992px) {
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(40, 40, 40, 0.95);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+    z-index: 1000;
+    display: none; /* Hide by default, show when menu is open via JS */
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 10px 5%;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+}
+
 .about {
   background: #e8f1fb;
   padding: 3rem;

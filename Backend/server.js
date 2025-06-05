@@ -7,13 +7,18 @@ require('dotenv').config();
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
-app.use(bodyParser.json());
+// Configure CORS to only allow your frontend origin
+app.use(cors({
+  origin: ['https://eiddoglobal.com'],
+  methods: ['POST', 'GET'], // add GET for /test-email endpoint as well
+  credentials: false
+}));
 
+app.use(bodyParser.json());
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT), // 587
+  port: parseInt(process.env.SMTP_PORT), // e.g. 587
   secure: false, // STARTTLS requires false
   auth: {
     user: process.env.SMTP_USER,
@@ -24,7 +29,6 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-
 app.post('/api/contact', async (req, res) => {
   const { name, email, phone, subject, message } = req.body;
 
@@ -32,19 +36,7 @@ app.post('/api/contact', async (req, res) => {
     return res.status(400).json({ success: false, error: 'Required fields missing' });
   }
 
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT),
-    secure: false, // false for port 587
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS
-    },
-    tls: {
-      rejectUnauthorized: false
-    }
-  });
-
+  // You can reuse the transporter created above, no need to recreate it here
   const mailOptions = {
     from: process.env.SMTP_USER,
     to: 'info@eiddoglobal.com',
@@ -64,15 +56,14 @@ app.post('/api/contact', async (req, res) => {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ success: true, message: 'Message sent successfully' });
   } catch (error) {
-    console.error('Mail error:', error); // <-- more detailed logging here
+    console.error('Mail error:', error);
     res.status(500).json({
       success: false,
       error: 'Failed to send message',
-      detail: error.message // this goes back to frontend for visibility
+      detail: error.message
     });
   }
 });
-
 
 app.get('/test-email', async (req, res) => {
   try {

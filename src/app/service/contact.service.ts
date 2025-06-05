@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ContactService {
-  private apiUrl = 'http://localhost:3000/api/contact'; // Your Node.js endpoint
+  private apiUrl = 'https://eiddoglobal.com/api/contact'; // Your Node.js endpoint
 
   constructor(private http: HttpClient) {}
 
