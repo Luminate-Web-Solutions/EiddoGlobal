@@ -9,6 +9,7 @@ import { ServicesComponent } from './services/services.component';
 import { RentalsComponent } from './rentals/rentals.component';
 import { FeaturedPropertiesComponent } from './featured-properties/featured-properties.component';
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent },

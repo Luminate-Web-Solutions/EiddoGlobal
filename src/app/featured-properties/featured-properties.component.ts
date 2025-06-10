@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { PropertyDetailsDialogComponent } from './property-details-dialog/property-details-dialog.component';
 
 interface Property {
   id: number;
@@ -20,12 +22,21 @@ interface Property {
   standalone: false,
 })
 export class FeaturedPropertiesComponent {
+  constructor(public dialog: MatDialog) {}
+
+  openDetails(property: any): void {
+    this.dialog.open(PropertyDetailsDialogComponent, {
+      width: '600px',
+      data: property
+    });
+  }
+
   properties: Property[] = [
     {
       id: 1,
-      title: 'Upgraded Villa | Furnished | 4 Cheques | Vac...',
+      title: 'Luxury Lakefront Villa | Fully Furnished | Flexible Payment | Ready to Move',
       price: 'Rs.195,000',
-      description: 'Experience Refined Living In This Beautifully Upgraded And Fully Furnished Villa Located...',
+      description: 'Experience refined living in this beautifully upgraded and fully furnished lakefront villa. Featuring spacious interiors, modern amenities, and breathtaking views, this property is perfect for families seeking comfort and elegance. Enjoy a private garden, swimming pool, and 24/7 security in a prestigious Geneva neighborhood. Flexible payment options available.',
       location: 'Geneva',
       bedrooms: 2,
       area: '332,993.98 Ft',
@@ -34,9 +45,9 @@ export class FeaturedPropertiesComponent {
     },
     {
       id: 2,
-      title: 'Upgraded Villa | Furnished | 4 Cheques | Vac...',
+      title: 'Modern Family Home | Prime Location | Spacious Layout | Move-in Ready',
       price: 'Rs.195,000',
-      description: 'Experience Refined Living In This Beautifully Upgraded And Fully Furnished Villa Located...',
+      description: 'This modern family home offers a spacious open-plan layout, high-end finishes, and abundant natural light. Located in the heart of Geneva, it features a gourmet kitchen, large bedrooms, and a beautifully landscaped backyard. Ideal for families looking for convenience and style in a sought-after community.',
       location: 'Geneva',
       bedrooms: 2,
       area: '332,993.98 Ft',
@@ -45,9 +56,9 @@ export class FeaturedPropertiesComponent {
     },
     {
       id: 3,
-      title: 'Upgraded Villa | Furnished | 4 Cheques | Vac...',
+      title: 'Elegant Penthouse Apartment | Panoramic Views | Exclusive Amenities',
       price: 'Rs.195,000',
-      description: 'Experience Refined Living In This Beautifully Upgraded And Fully Furnished Villa Located...',
+      description: 'Live above it all in this elegant penthouse apartment boasting panoramic city and lake views. The property includes three spacious bedrooms, a designer kitchen, and access to exclusive amenities such as a fitness center, rooftop terrace, and concierge services. Perfect for professionals and families seeking luxury and convenience.',
       location: 'Geneva',
       bedrooms: 2,
       area: '332,993.98 Ft',
@@ -56,9 +67,9 @@ export class FeaturedPropertiesComponent {
     },
     {
       id: 4,
-      title: 'Upgraded Villa | Furnished | 4 Cheques | Vac...',
+      title: 'Contemporary Urban Villa | Private Pool | Secure Community | Investment Opportunity',
       price: 'Rs.195,000',
-      description: 'Experience Refined Living In This Beautifully Upgraded And Fully Furnished Villa Located...',
+      description: 'Discover this contemporary urban villa featuring a private pool, lush gardens, and secure gated access. The villa offers a blend of modern architecture and functional design, with spacious living areas and premium finishes. Located in a thriving Geneva neighborhood, this property is an excellent investment or family home.',
       location: 'Geneva',
       bedrooms: 2,
       area: '332,993.98 Ft',

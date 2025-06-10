@@ -27,7 +27,7 @@
   font-weight: bold;
 }
 
-/* Navbar styles (copied from your prompt) */
+/* Navbar styles */
 .navbar {
   display: flex;
   align-items: center;
@@ -164,6 +164,7 @@
   box-shadow: 4px 4px 0px #4a0f0f;
   text-align: center;
   font-size: 0.95rem;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 .service-box mat-icon {
@@ -172,6 +173,44 @@
   margin-bottom: 0.5rem;
   width: 100%;
   height: auto;
+}
+
+.service-box:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 8px 8px 0px #4a0f0f;
+  background: #b93a2f;
+}
+
+/* Button styled like service-box */
+.btn,
+.btn-primary {
+  display: inline-block;
+  background: #a62c25;
+  color: #fff;
+  padding: 1rem;
+  width: 200px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #4a0f0f;
+  text-align: center;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  margin: 0 auto;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #b93a2f;
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 8px 8px 0px #4a0f0f;
+}
+
+.btn-primary {
+  background-color: #a62c25;
+  color: #fff;
 }
 
 .why-us {
@@ -184,7 +223,14 @@
   width: 70%;
   height: auto;
   margin-bottom: 1rem;
+  /* transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(166,44,37,0.08); */
 }
+
+/* .why-us img:hover {
+  transform: scale(1.04) rotate(-0deg);
+  box-shadow: 0 8px 32px rgba(166,44,37,0.18);
+} */
 
 .reasons {
   display: flex;

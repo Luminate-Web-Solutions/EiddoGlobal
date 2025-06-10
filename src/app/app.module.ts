@@ -21,6 +21,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PropertyDetailsDialogComponent } from './featured-properties/property-details-dialog/property-details-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     FeaturedPropertiesComponent
   ],
   imports: [
+    PropertyDetailsDialogComponent,
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
@@ -46,6 +49,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     ReactiveFormsModule,
     MatInputModule,
     HttpClientModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

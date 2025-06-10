@@ -124,6 +124,12 @@
   background-color: white;
 }
 
+.team-section img{
+  width: 1000px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
 .team-title {
   font-size: 2.5rem;
   font-weight: 600;

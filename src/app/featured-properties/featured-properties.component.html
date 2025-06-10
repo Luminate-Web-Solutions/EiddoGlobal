@@ -68,10 +68,11 @@
             <span class="location-text">{{ property.location }}</span>
           </div>
           
-          <a href="#" class="learn-more-btn">
-            Learn More
-            <span class="arrow-icon">→</span>
+          <a class="learn-more-btn" (click)="openDetails(property)">
+          Learn More
+          <span class="arrow-icon">→</span>
           </a>
+
         </div>
       </div>
     </div>
